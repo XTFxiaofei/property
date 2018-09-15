@@ -19,18 +19,20 @@ public class WebMvcConfig  implements WebMvcConfigurer {
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
 
-        registry.addInterceptor(new AdminSessionInterceptor())
-                /** 把admin所有url添加拦截 */
+/*        registry.addInterceptor(new AdminSessionInterceptor())
+                *//** 把admin所有url添加拦截 *//*
                 .addPathPatterns("/admin/**")
-                /** 去掉某个url的拦截 */
+                *//** 去掉某个url的拦截 *//*
                 .excludePathPatterns("/admin/login")
-                .excludePathPatterns("/admin/");
+                .excludePathPatterns("/admin/")
+                .excludePathPatterns("/static/**");*/
 
-         registry.addInterceptor(new StudentSessionInterceptor())
+/*         registry.addInterceptor(new StudentSessionInterceptor())
                  .addPathPatterns("/student/**")
                  .excludePathPatterns("/student/register")
                  .excludePathPatterns("/student/")
-                 .excludePathPatterns("/student/login");
+                 .excludePathPatterns("/student/login")
+                 .excludePathPatterns("/static/**");*/
     }
 
 
